@@ -1,5 +1,6 @@
 package aula_12_03_25;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Ex08 {
@@ -18,6 +19,7 @@ public class Ex08 {
 		 */
 		
 		Scanner scanner = new Scanner(System.in);
+		DecimalFormat decimalFormat = new DecimalFormat("0.00");
 		
 		Double medidaA, medidaB, medidaC, areaTriangulo, areaCirculo, areaTrapezio, areaQuadrado, areaRetangulo;
 		
@@ -36,9 +38,13 @@ public class Ex08 {
 		areaQuadrado = Math.pow(medidaB, 2);
 		areaRetangulo = medidaA * medidaB;
 		
-		System.out.println(
-				String.format("A area do triangulo de base %.2f e altura %.2f é %.2f m²", medidaA, medidaC, areaTriangulo));
+		// com Decimal format
+		System.out.printf("A area do triangulo de base %s e altura %s é %s m²\n", 
+				decimalFormat.format(medidaA), 
+				decimalFormat.format(medidaC), 
+				decimalFormat.format(areaTriangulo));
 		
+		// com String format
 		System.out.println(
 				String.format("A area do circulo de raio %.2f é %.2f m²", medidaC, areaCirculo));
 	

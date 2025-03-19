@@ -34,8 +34,7 @@ public class Ex06 {
 			public double getSalarioFixo() {
 				return salarioFixo;
 			}
-			
-			//teste 
+			 
 
 			public void setSalarioFixo(double salarioFixo) {
 				this.salarioFixo = salarioFixo;
