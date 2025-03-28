@@ -19,6 +19,7 @@ public class Ex06 {
 		double mediaAlturas;
 		
 		while(altura != 0) {
+			
 			System.out.println("Digite a altura: ");
 			altura = scanner.nextDouble();
 			
@@ -28,6 +29,7 @@ public class Ex06 {
 			} else {
 				System.out.println("Medida inválida.");
 			}
+			
 		}
 		
 		mediaAlturas = somaAlturas / quantidadeDePessoas;

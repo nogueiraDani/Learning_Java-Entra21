@@ -16,7 +16,7 @@ public class Ex08 {
 		Scanner scanner = new Scanner(System.in);
 		String nome = "";
 
-		while (true) {
+		while (!(nome.equalsIgnoreCase("fim"))) {
 
 			System.out.println("Digite o nome:");
 			nome = scanner.next();

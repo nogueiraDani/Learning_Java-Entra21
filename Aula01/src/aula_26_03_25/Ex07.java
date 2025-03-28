@@ -27,7 +27,7 @@ public class Ex07 {
 		double somaAlturas = 0;
 		double mediaAlturas = 0;
 
-		while (true) {
+		while (!(inscricao.equals("0"))) {
 			System.out.println("Digite a inscrição:");
 			inscricao = scanner.next();
 
