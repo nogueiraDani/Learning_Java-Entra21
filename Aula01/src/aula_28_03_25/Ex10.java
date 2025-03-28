@@ -14,8 +14,8 @@ public class Ex10 {
 		 */
 		
 		Scanner scanner = new Scanner(System.in);
-		int quantidadeAlunos = 0;
 		ArrayList<String> nomes = new ArrayList<String>();
+		int quantidadeAlunos = 0;
 		int quantidadeAlunosAcimaDe20 = 0;
 		
 		System.out.println("Digite quantos alunos quer verificar:");
@@ -39,7 +39,7 @@ public class Ex10 {
 			}
 		}
 		
-		if(!(nomes.isEmpty())) {
+		if(!nomes.isEmpty()) {
 			System.out.println("Os alunos com 18 são:");
 			
 			for (String nome : nomes) {

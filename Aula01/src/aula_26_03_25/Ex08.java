@@ -16,13 +16,13 @@ public class Ex08 {
 		Scanner scanner = new Scanner(System.in);
 		String nome = "";
 
-		while (!(nome.equalsIgnoreCase("fim"))) {
+		while (!nome.equalsIgnoreCase("fim")) {
 
 			System.out.println("Digite o nome:");
 			nome = scanner.next();
 			int notasValidas = 0;
 
-			if (!(nome.equalsIgnoreCase("fim"))) {
+			if (!nome.equalsIgnoreCase("fim")) {
 
 				double somaNotas = 0;
 				double mediaNota = 0;
@@ -47,7 +47,6 @@ public class Ex08 {
 
 			} else {
 				System.out.println("Fim");
-				break;
 			}
 		}
 

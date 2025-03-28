@@ -1,5 +1,6 @@
 package aula_28_03_25;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Ex11 {
@@ -13,7 +14,7 @@ public class Ex11 {
 
 		Scanner scanner = new Scanner(System.in);
 		int valorACalcular;
-		int resultado = 1;
+		BigInteger resultado = BigInteger.ONE;
 
 		System.out.println("Digite o valor que deseja calcular o fatorial:");
 		valorACalcular = scanner.nextInt();
@@ -21,9 +22,7 @@ public class Ex11 {
 		if (valorACalcular > 0) {
 			
 			for (int i = valorACalcular; i >= 1; i--) {
-
-				resultado *= i;
-
+				resultado = resultado.multiply(BigInteger.valueOf(i));
 			}
 
 			System.out.println(resultado);

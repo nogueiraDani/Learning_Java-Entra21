@@ -22,16 +22,17 @@ public class Ex07 {
 		String inscricaoMaisAlto = "";
 		String inscricaoMaisBaixo = "";
 		double altura = 0;
-		double alturaMaisAlto = 0;
-		double alturaMaisBaixo = 2.60;
+		double alturaMaisAlto = Double.MIN_VALUE;
+		double alturaMaisBaixo = Double.MAX_VALUE;
 		double somaAlturas = 0;
 		double mediaAlturas = 0;
 
-		while (!(inscricao.equals("0"))) {
+		while (!inscricao.equals("0")) {
+			
 			System.out.println("Digite a inscrição:");
 			inscricao = scanner.next();
 
-			if (!(inscricao.equals("0"))) {
+			if (!inscricao.equals("0")) {
 				System.out.println("Digite a altura:");
 				altura = scanner.nextDouble();
 
@@ -56,12 +57,12 @@ public class Ex07 {
 				
 			} else {
 				System.out.println("Resultado:");
-				break;
 			}
 
 		}
 
 		if (quantidadeDeAtletas > 0) {
+			
 			mediaAlturas = somaAlturas / quantidadeDeAtletas;
 
 			System.out.printf("O atleta mais alto tem a inscrição: %s e  a altura de %.2f m\n", inscricaoMaisAlto,
