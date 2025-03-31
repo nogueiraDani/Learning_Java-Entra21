@@ -35,6 +35,8 @@ public class Ex03 {
 
 		System.out.println(
 				String.format("A diferenca entre (%d * %d) e (%d * %d) é %d", num1, num2, num3, num4, diferenca));
+		
+		scanner.close();
 
 	}
 }

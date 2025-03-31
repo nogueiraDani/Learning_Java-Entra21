@@ -77,7 +77,7 @@ public class Ex06 {
 		
 		System.out.println(vendedor.toString());
 		
-	
+		scanner.close();
 	}
 
 }

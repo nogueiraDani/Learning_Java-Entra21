@@ -27,6 +27,8 @@ public class RefactorExercicio3 {
 		System.out.println(String.format("a area do retangulo é %.2f metros quadrados", area));
 		System.out.println(String.format("o perimetro do retangulo é %.2f metros", perimetro));
 		
+		scanner.close();
+		
 		
 	}
 

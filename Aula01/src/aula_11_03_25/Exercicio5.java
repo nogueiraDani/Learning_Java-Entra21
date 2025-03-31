@@ -16,6 +16,9 @@ public class Exercicio5 {
 		int idade = scanner.nextInt();
 		
 		System.out.println("A idade é: " + idade + " anos.");
+		
+		scanner.close();
+
 	}
 	
 

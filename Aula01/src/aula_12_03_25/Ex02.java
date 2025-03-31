@@ -20,6 +20,8 @@ public class Ex02 {
 		area = Math.PI * Math.pow(raio, 2);
 		
 		System.out.println(String.format("A area do circulo de raio %.2f é %.2f", raio, area));
+		
+		scanner.close();
 	}
 
 }

@@ -86,7 +86,7 @@ public class Ex04 {
 		System.out.println(funcionario.toString());
 		
 		
-		
+		scanner.close();
 		
 	}
 

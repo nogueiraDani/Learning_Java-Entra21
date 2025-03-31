@@ -57,7 +57,7 @@ public class Ex08 {
 		System.out.println(
 				String.format("A area do retangulo de lados %.2f e %.2f é %.2f m²", medidaA, medidaB, areaRetangulo));
 		
-
+		scanner.close();
 	}
 
 }

@@ -30,20 +30,24 @@ public class Ex09 {
 
 		int contador = 0;
 
-		if (carta1 > 0 && carta1 <= 3 || carta2 > 0 && carta2 <= 3 || carta3 > 0 && carta3 <=3) {
-			
-			if (carta1 <= 3) contador++;
-			
-			if (carta2 <= 3) contador++;
-			
-			if (carta3 <= 3) contador++;
-			
+		if (carta1 > 0 && carta1 <= 3 || carta2 > 0 && carta2 <= 3 || carta3 > 0 && carta3 <= 3) {
+
+			if (carta1 <= 3) {
+				contador++;
+			}
+
+			if (carta2 <= 3) {
+				contador++;
+			}
+
+			if (carta3 <= 3) {
+				contador++;
+			}
+
 		} else {
 			System.out.println("Cartas ruins");
 		}
 
-		
-		
 		if (contador == 1) {
 			System.out.println("TRUCOOO!");
 		} else if (contador == 2) {

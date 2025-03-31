@@ -22,6 +22,8 @@ public class RefactorExercicio4 {
 		
 		System.out.println("Seu nome é: " + nome + " " + sobrenome);
 		
+		scanner.close();
+		
 	}
 	
 	

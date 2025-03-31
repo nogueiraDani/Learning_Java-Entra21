@@ -27,6 +27,8 @@ public class Ex05 {
 		media = ((notaA * pesoA) + (notaB * pesoB)) / 10;
 		
 		System.out.println(String.format("A media é %.2f", media));
+		
+		scanner.close();
 	}
 
 }

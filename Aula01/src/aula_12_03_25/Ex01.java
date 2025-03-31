@@ -23,7 +23,10 @@ public class Ex01 {
 		produto = num1 * num2;
 		
 		System.out.println(String.format("A soma entre %d e %d é: %d", num1, num2, soma));
+		System.out.println(String.format("O produto entre %d e %d é: %d", num1, num2, produto));
 		
+		scanner.close();
+	
 	}
 
 }

@@ -18,6 +18,8 @@ public class RefactorExercicio2 {
 		
 		System.out.println(String.format("a altura em metros é %.2f metros.", altura));
 		System.out.println("a altura em metros é " +  altura + " metros.");
+		
+		scanner.close();
 	}
 
 }

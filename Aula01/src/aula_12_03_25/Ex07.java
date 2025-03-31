@@ -29,6 +29,8 @@ public class Ex07 {
 		System.out.println("R$ " + decimalFormat.format(valorEmDolares * cotacaoDolar));
 		//System.out.println(String.format("O valor em reais é R$ %.2f", (valorEmDolares * cotacaoDolar)));
 		
+		scanner.close();
+		
 	}
 
 }
