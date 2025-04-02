@@ -44,15 +44,20 @@ public class Ex10 {
 		int indiceAfinidade = 0;
 		int opcaoMenu = 0;
 		
-		System.out.println("Bem vindo ao app da afinidade:");
-		System.out.println("------------------------------");
+		System.out.printf("""
+				----------------------------------------				
+				---- Bem vindo ao app da afinidade: ----
+				----------------------------------------
+					""");
 
 		// mostrando menu principal
 		while (opcaoMenu == 0) {
-			System.out.println("------------Menu--------------");
-			System.out.println("1 - Responder questionario:---");
-			System.out.println("2 - Mostrar resultado:--------");
-			System.out.println("3 - Sair:---------------------");
+			System.out.printf("""
+					--------------- Menu -------------------
+					1 - Responder questionario:-------------
+					2 - Mostrar resultado:------------------
+					3 - Sair:-------------------------------
+					""");
 			opcaoMenu = scanner.nextInt();
 
 			// mostrando menu da opçcao de responder questionario
@@ -65,12 +70,15 @@ public class Ex10 {
 					// valida se o questionario já nao foi preenchido antes.
 					if (!questionarioMocaRespondido) {
 
-						System.out.println(
-								"A seguir você respondera algumas pergutnas, as respostas devem estar entre as opçoes: ");
-						System.out.println("-- Sim --");
-						System.out.println("-- Não --");
-						System.out.println("-- Indiferente --");
-						System.out.println("-----------------");
+						System.out.printf("""
+								A seguir você respondera algumas perguntas, 
+								as respostas devem estar entre as opçoes:
+								----------------------------------------
+								-- Sim ---------------------------------
+								-- Não ---------------------------------
+								-- Indiferente -------------------------
+								----------------------------------------
+								""");
 						for (int i = 0; i < respostasMoca.length; i++) {
 							System.out.println(perguntas[i]);
 							String resposta = scanner.next();
@@ -86,11 +94,14 @@ public class Ex10 {
 						}
 						// mostra as opççoes caso o questionario da moca já foi preenchido
 					} else {
-						System.out.println("O questionario da moca já foi respondido.");
-						System.out.println("Digite o que deseja fazer:----");
-						System.out.println("1 - Responder questionario:---");
-						System.out.println("2 - Mostrar resultado:--------");
-						System.out.println("3 - Sair:---------------------");
+						System.out.printf("""
+								O questionario da moca já foi respondido.
+								----------------------------------------
+								Digite o que deseja fazer:--------------
+								1 - Responder questionario:-------------
+								2 - Mostrar resultado:------------------
+								3 - Sair:-------------------------------
+								""");
 						opcaoMenu = scanner.nextInt();
 						continue;
 					}
@@ -98,12 +109,15 @@ public class Ex10 {
 				} else if (opcaoGenero.equalsIgnoreCase("m")) {
 					// valida se o questionario já nao foi preenchido antes.
 					if (!questionarioRapazRespondido) {
-						System.out.println(
-								"A seguir você respondera algumas pergutnas, as respostas devem estar entre as opçoes: ");
-						System.out.println("-- Sim --");
-						System.out.println("-- Não --");
-						System.out.println("-- Indiferente --");
-						System.out.println("-----------------");
+						System.out.printf("""
+								A seguir você respondera algumas perguntas, 
+								as respostas devem estar entre as opçoes:
+								----------------------------------------
+								-- Sim ---------------------------------
+								-- Não ---------------------------------
+								-- Indiferente -------------------------
+								----------------------------------------
+								""");
 						for (int i = 0; i < respostasMoca.length; i++) {
 							System.out.println(perguntas[i]);
 							String resposta = scanner.next();
@@ -119,11 +133,14 @@ public class Ex10 {
 						}
 						// mostra as opççoes caso o questionario da moca já foi preenchido
 					} else {
-						System.out.println("O questionario da moca já foi respondido.");
-						System.out.println("Digite o que deseja fazer:----");
-						System.out.println("1 - Responder questionario:---");
-						System.out.println("2 - Mostrar resultado:--------");
-						System.out.println("3 - Sair:---------------------");
+						System.out.printf("""
+								O questionario da moca já foi respondido.
+								----------------------------------------
+								Digite o que deseja fazer:--------------
+								1 - Responder questionario:-------------
+								2 - Mostrar resultado:------------------
+								3 - Sair:-------------------------------
+								""");
 						opcaoMenu = scanner.nextInt();
 						continue;
 					}
@@ -148,30 +165,37 @@ public class Ex10 {
 					}
 				}
 			
-				System.out.println("|-----------|-----------------------------------|");
-				System.out.println("| Afinidade | Mensagem -------------------------|");
-				System.out.println("| 15 ------ | Casem ----------------------------|");
-				System.out.println("| 10 a 14 - | Vocês têm muita coisa em comum! --|");
-				System.out.println("| 5 a 9 --- | Talvez não dê certo :( -----------|");
-				System.out.println("| 0 a 4 --- | Vale um encontro. ----------------|");
-				System.out.println("| -1 a -9 - | Melhor não perder tempo ----------|");
-				System.out.println("| -10 ----- | Vocês se odeiam! -----------------|");
-				System.out.println("|-----------|-----------------------------------|");
+				System.out.printf("""
+						|-----------|-----------------------------------|
+						| Afinidade | Mensagem -------------------------|
+						| 15 ------ | Casem ----------------------------|
+						| 10 a 14 - | Vocês têm muita coisa em comum! --|
+						| 5 a 9 --- | Talvez não dê certo :( -----------|
+						| 0 a 4 --- | Vale um encontro. ----------------|
+						| -1 a -9 - | Melhor não perder tempo ----------|
+						| -10 ----- | Vocês se odeiam! -----------------|
+						|-----------|-----------------------------------|\n
+						""");
 				System.out.printf("Baseado na tabela abaixo, vocês tem -- %d -- pontos de afinidade.\n", indiceAfinidade);
-				
-				System.out.println("Queres fazer o questionario novamente?");
-				System.out.println("1 - sim -------------");
-				System.out.println("2 - não -------------");
+				System.out.printf("""
+						Queres fazer o questionario novamente?
+						1 - sim ------------------------------
+						2 - não ------------------------------
+						""");
+				System.out.println("");
+				System.out.println("");
 				int opcaoFinal = scanner.nextInt();
 				if(opcaoFinal == 1) {
 					opcaoMenu = 0;
 				} else if(opcaoFinal == 2) {
 					opcaoMenu = 3;
 				} else {
-					System.out.println("Valor incorreto:");
-					System.out.println("Queres fazer o questionario novamente?");
-					System.out.println("1 - sim -------------");
-					System.out.println("2 - não -------------");
+					System.out.printf("""
+							Valor incorreto.
+							Queres fazer o questionario novamente?
+							1 - sim ------------------------------
+							2 - não ------------------------------
+							""");
 					opcaoFinal = scanner.nextInt();
 				}
 			}

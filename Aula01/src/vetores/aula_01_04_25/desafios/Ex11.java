@@ -25,15 +25,21 @@ public class Ex11 {
 		double mediaNotasHomens = 0;
 		double notaMulherJovem = 0;
 		int idadeMulherJovem = Integer.MAX_VALUE;
-		int notasAcimaDaMedia = 0;
 		int quantidadeMulheresAcimaDe50 = 0;
-		int idadeMulheres[] = new int[30];
-		double notasMulheres[] = new double[30];
+		int quantidadeDeEntrevistados = 0;
+
+		System.out.println("Quantas pessoas deseja entrevistar?");
+		quantidadeDeEntrevistados = scanner.nextInt();
+
+		int idadeMulheres[] = new int[quantidadeDeEntrevistados];
+		double notasMulheres[] = new double[quantidadeDeEntrevistados];
 
 		System.out.println("Notas do cinema:");
 		System.out.println("----------------");
 
-		for (int i = 0; i < 30; i++) {
+		// loop para fazer as entrevistas
+		for (int i = 0; i < quantidadeDeEntrevistados; i++) {
+
 			double nota;
 			int idade;
 
@@ -41,18 +47,24 @@ public class Ex11 {
 			System.out.println("1- feminino");
 			System.out.println("2- masculino");
 			int genero = scanner.nextInt();
-
-			if (genero != 1 && genero != 2) {
+			
+			//valida o genero
+			while(genero != 1 && genero != 2) {
 				System.out.println("Opção inválida, digite entre 1- feminino e 2- masculino");
-				i--;
-			} else {
+				genero = scanner.nextInt();
+			}
+			
+			// questiona a nota
+			if (genero == 1 || genero == 2) {
 				System.out.println("De 0 a 10, qual a nota quer dar para o cinema?");
 				nota = scanner.nextDouble();
-
+				
+				// valida a nota
 				if (nota >= 0 && nota <= 10) {
 					System.out.println("Qual é a sua idade?");
 					idade = scanner.nextInt();
 
+					// regra para as notas e medias
 					if (idade > 0) {
 						somaNotaCinema += nota;
 						if (genero == 2) {
@@ -60,24 +72,46 @@ public class Ex11 {
 							quantidadeHomens++;
 						}
 
+						// alimenta o vetor da idade das mulheres e notas das mulheres
 						if (genero == 1) {
 							idadeMulheres[i] = idade;
 							notasMulheres[i] = nota;
 						}
 
 					}
-
 				}
 
 			}
 
 		}
-
-		mediaNotaCinema = somaNotaCinema / 30;
+		
+		// calculando as medias
+		mediaNotaCinema = somaNotaCinema / quantidadeDeEntrevistados;
 		mediaNotasHomens = somaNotasHomens / quantidadeHomens;
+		
+		// loop para achar mulher mais jovem e quantas mulheres acima de 50 deram nota acima da media
+		for (int i = 0; i < notasMulheres.length; i++) {
+			if (idadeMulheres[i] > 0 && idadeMulheres[i] < idadeMulherJovem) {
+				idadeMulherJovem = idadeMulheres[i];
+				notaMulherJovem = notasMulheres[i];
+			}
 
-		// TODO parei aqui
+			if (idadeMulheres[i] > 50 && notasMulheres[i] > mediaNotaCinema) {
+				quantidadeMulheresAcimaDe50++;
+			}
 
+		}
+
+		// mostrando os resultados.
+		System.out.printf("A nota média do cinema é %.2f\n", mediaNotaCinema);
+		System.out.printf("A média das notas masculinas é %.2f\n", mediaNotasHomens);
+		System.out.printf("A nota da mulher mais jovem (que possui %d anos) é %.2f\n", idadeMulherJovem,
+				notaMulherJovem);
+		System.out.printf("%d mulheres acima de 50 anos deram nota maior que a média %.2f\n", quantidadeMulheresAcimaDe50,
+				mediaNotaCinema);
+
+		
+		scanner.close();
 	}
 
 }
