@@ -12,9 +12,12 @@ public class Ex03 {
 
 		Scanner scanner = new Scanner(System.in);
 		
-		int matriz1[][] = new int[2][2];
-		int matriz2[][] = new int[2][2];
-		int matrizResultado[][] = new int[2][2];
+		System.out.println("Digite o tamanho para as duas matrizes:");
+		int tamanhoMatriz = scanner.nextInt();
+		
+		int matriz1[][] = new int[tamanhoMatriz][tamanhoMatriz];
+		int matriz2[][] = new int[tamanhoMatriz][tamanhoMatriz];
+		int matrizResultado[][] = new int[matriz1.length][matriz1[0].length];
 
 		System.out.println("---------------------------------");
 		System.out.println("Vamos preencher a primeira matriz:");

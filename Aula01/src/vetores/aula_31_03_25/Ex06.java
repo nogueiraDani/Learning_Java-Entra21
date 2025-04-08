@@ -21,6 +21,6 @@ public class Ex06 {
 		System.out.printf("Array original = %s\n", Arrays.toString(numerosOriginais));
 		System.out.printf("Array invertido = %s\n", Arrays.toString(numerosInvertidos));
 
-	}
+	}	
 
 }
