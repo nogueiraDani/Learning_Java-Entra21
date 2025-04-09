@@ -40,7 +40,8 @@ public class Ex07 {
 				matriz[i][j] = valor;
 				
 				somaDosElementos += valor;
-
+				
+				// resolução B
 				if (valor % 2 == 0) {
 					quantidadeNumerosPares++;
 				}
@@ -49,30 +50,38 @@ public class Ex07 {
 		
 		mediaDosElementos = somaDosElementos / (quantidadeDeElementos);
 		
-		for (int i = 0; i < matriz.length; i++) {
+		System.out.println("-------------------------");
+		System.out.println("--------Resultado--------");
+		
+        boolean encontrou = false;
+        
+        for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz[i].length; j++) {
 				int valor = matriz[i][j];
+				
+				// resolução C
 				if (valor > mediaDosElementos && valor % 2 != 0) {
 					quantidadeNumerosImparesMaioresQueMedia++;
 				}
-			}
-		}
-		
-		// parei na letra A
-			
-		
-		
-		
-		for (int i = 0; i < matriz.length; i++) {
-			for (int j = 0; j < matriz[i].length; j++) {
-				System.out.print(matriz[i][j] + " ");
-			}
-			System.out.println();
-		}
-		
 				
+				// resolução da A
+				for (int k = 0; k < matriz.length; k++) {
+					for (int l = 0; l < matriz[k].length; l++) {
+						
+						if ((i != k || j != l) && matriz[k][l] == valor) {
+							System.out.printf("O elemento %d da posição [%d][%d], se repete na posição [%d][%d].\n", valor, i, j, k, l);
+							encontrou = true;
+						}
+					}
+				}
+			}
+		}
+
+        if (!encontrou) {
+            System.out.println("Não há elementos repetidos na matriz.");
+        }
 		
-		
+						
 		System.out.printf("Existem %d números pares na matriz.\n", quantidadeNumerosPares);
 		System.out.printf("Existem %d números impares maiores que a média dos elementos(%.2f).\n", quantidadeNumerosImparesMaioresQueMedia, mediaDosElementos);
 
