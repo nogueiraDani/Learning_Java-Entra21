@@ -2,7 +2,6 @@ package avaliacao_11_04_25;
 
 import java.util.Scanner;
 
-import javax.imageio.IIOParam;
 
 public class Questao_01 {
 
@@ -72,7 +71,7 @@ public class Questao_01 {
 					if(lados[0] == lados[1] && lados[1] == lados[2]) {
 						System.out
 								.println("A classificação do triangulo conforme as medidas informadas é: Equilátero.");
-					} else if (lados[0] == lados[1] && lados[1] != lados[2]) {
+					} else if (lados[0] == lados[1] || lados[1] == lados[2] || lados[0] == lados[2]) { // corrigido
 						System.out.println("A classificação do triangulo conforme as medidas informadas é: Isóceles.");
 					} else {
 						System.out.println("A classificação do triangulo conforme as medidas informadas é: Escaleno");

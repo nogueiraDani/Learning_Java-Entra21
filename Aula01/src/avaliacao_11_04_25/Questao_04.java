@@ -55,12 +55,9 @@ public class Questao_04 {
 		int colunas = matriz[0].length;
 		int linhas = 7;
 
+		double maiorAmplitude = Double.MIN_VALUE;
 		double matrizAmplitude[] = new double[7];
 
-		double maiorTemperatura = Double.MIN_VALUE;
-		double menorTemperatura = Double.MAX_VALUE;
-
-		double maiorAmplitude = Double.MIN_VALUE;
 		int diaMaiorAmplitude = 0;
 
 		while (opcao == 0) {
@@ -80,10 +77,9 @@ public class Questao_04 {
 				System.out.println("Digite o dia que deseja pesquisar:");
 				String resposta = scanner.next();
 				double somaTemperaturas = 0;
-				int diaDaSemanaEscolhido = 0;
+				int diaDaSemanaEscolhido = -1; // corrigido
 
 				// TODO: falta validar os dias com acento e com ç
-				// TODO: ta quebrando aqui, nao busca o dia da semana certo.
 				for (int i = 0; i < diasDaSemana.length; i++) {
 					if (resposta.equalsIgnoreCase(diasDaSemana[i])) {
 						diaDaSemanaEscolhido = i;
@@ -91,12 +87,12 @@ public class Questao_04 {
 							somaTemperaturas += matriz[diaDaSemanaEscolhido][j];
 						}
 					}
-
 				}
 
 				double mediaTemperaturaDia = somaTemperaturas / colunas;
 				System.out.printf("A média da temperatura no dia da semana de %s é %.2f°C\n",
 						diasDaSemana[diaDaSemanaEscolhido], mediaTemperaturaDia);
+
 				System.out.println("-------------------------------------------------------------");
 				opcao = 0;
 
@@ -116,6 +112,7 @@ public class Questao_04 {
 				double mediaTemperaturaDia = somaTemperaturas / linhas;
 				System.out.printf("A média da temperatura na hora %d é %.2f°C\n", resposta, mediaTemperaturaDia);
 				System.out.println("-------------------------------------------------------------");
+				opcao = 0;
 				continue;
 
 			} else if (opcao == 3) {
@@ -123,6 +120,9 @@ public class Questao_04 {
 				// c) Qual dia da semana teve a maior amplitude térmica.
 
 				for (int i = 0; i < matriz.length; i++) {
+					double maiorTemperatura = Double.MIN_VALUE;
+					double menorTemperatura = Double.MAX_VALUE;
+
 					for (int j = 0; j < matriz[i].length; j++) {
 						if (matriz[i][j] > maiorTemperatura) {
 							maiorTemperatura = matriz[i][j];
@@ -132,16 +132,16 @@ public class Questao_04 {
 						}
 					}
 					matrizAmplitude[i] = maiorTemperatura - menorTemperatura;
-				}
-
-				for (int i = 0; i < matrizAmplitude.length; i++) {
+					
 					if (matrizAmplitude[i] > maiorAmplitude) {
+						maiorAmplitude = matrizAmplitude[i];
 						diaMaiorAmplitude = i;
 					}
 				}
 
+
 				System.out.printf("O dia da semana com maior amplitude térmica foi %s, com %.2f°C de amplitude.\n",
-						diasDaSemana[diaMaiorAmplitude], matrizAmplitude[diaMaiorAmplitude]);
+						diasDaSemana[diaMaiorAmplitude], maiorAmplitude);
 				System.out.println("-------------------------------------------------------------");
 				opcao = 0;
 
@@ -152,7 +152,7 @@ public class Questao_04 {
 				opcao = 0;
 			}
 		}
-
+		scanner.close();
 	}
 
 }

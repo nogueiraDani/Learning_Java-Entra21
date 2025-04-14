@@ -14,51 +14,52 @@ public class Questao_03 {
 		 * inserir os valores em um vetor de 8 posições.
 		 * 
 		 */
-		
+
 		Scanner scanner = new Scanner(System.in);
-		
+
 		System.out.println("Descobrindo a sequencia dentro dos vetores.");
-		
+
 		int vetor[] = new int[8];
-		int sequencia[] = new int[3];
-		boolean haSequencia = false;
-		
+
 		for (int i = 0; i < vetor.length; i++) {
-			System.out.printf("Digite o %dº valor ->", i +1);
+			System.out.printf("Digite o %dº valor ->", i + 1);
 			vetor[i] = scanner.nextInt();
 		}
-		
-		while(!haSequencia) {
-			for (int j = 0; j < vetor.length; j++) {
-				for (int i = 0; i < sequencia.length; i++) {
-					sequencia[i] = vetor[i];	
-				}
-			}
 
-			int primeiroValor = sequencia[0];
-			int segundoValor = sequencia[1];
-			int terceiroValor = sequencia[2];
+		System.out.println("Vetor digitado: " + Arrays.toString(vetor));
 
-			if (terceiroValor == segundoValor + 1 && segundoValor == primeiroValor + 1) {
-				System.out.println(Arrays.toString(sequencia));
-				haSequencia = true;
-			} else {
-				//TODO tá ficando no loop aqui, socorro!!!
-				
-				System.out.println("aqui");
-				continue;
-				
-			}
-			
-		}
-		
-		
-		
-		
-		
-		
+		int inicioSequencia = -1;
+        int tamanhoSequencia = 1;
+        boolean sequenciaEncontrada = false;
+        
+        // Procura pela primeira sequência de tamanho >= 2
+        for (int i = 1; i < vetor.length; i++) {
+            if (vetor[i] == vetor[i - 1] + 1) {
+                if (tamanhoSequencia == 1) {
+                    inicioSequencia = i - 1;
+                }
+                tamanhoSequencia++;
+                
+                // Se encontrou uma sequência de tamanho >= 2, para a busca
+                if (tamanhoSequencia >= 2) {
+                    sequenciaEncontrada = true;
+                    break;
+                }
+            } else {
+                tamanhoSequencia = 1;
+            }
+        }
+        
+        // Exibe o resultado
+        if (sequenciaEncontrada) {
+            int[] sequencia = new int[tamanhoSequencia];
+            System.arraycopy(vetor, inicioSequencia, sequencia, 0, tamanhoSequencia);
+            System.out.println("Primeira sequência encontrada: " + Arrays.toString(sequencia));
+        } else {
+            System.out.println("Nenhuma sequência com 2 ou mais números consecutivos encontrada.");
+        }
+
 		scanner.close();
-		
 
 	}
 

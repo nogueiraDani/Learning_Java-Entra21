@@ -90,6 +90,7 @@ public class Ex_externo03 {
 				System.out.println("Opção inválida. Tente novamente.");
 			}
 		}
+		scanner.close();
 
 	}
 
