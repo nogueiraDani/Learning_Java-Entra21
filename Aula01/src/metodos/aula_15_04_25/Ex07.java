@@ -1,3 +1,5 @@
+package metodos.aula_15_04_25;
+
 import java.util.Scanner;
 
 public class Ex07 {
@@ -32,17 +34,16 @@ public class Ex07 {
         nomeAjustado.append(tresPrimeirasLetrasSobrenome.substring(1));
         nomeAjustado.append(duasPrimeirasLetrasNome.toLowerCase());
 
-
         String listaSobrenomes[] = string2.split(" ");
         String duasPrimeirasLetrasSobrenomeMae = listaSobrenomes[listaSobrenomes.length - 1].substring(0, 2);
         String tresPrimeirasLetrasCidadeNatal = string3.substring(0, 3);
-        
+
         StringBuilder sobrenomeAjustado = new StringBuilder();
 
         sobrenomeAjustado.append(String.valueOf(duasPrimeirasLetrasSobrenomeMae.charAt(0)).toUpperCase());
         sobrenomeAjustado.append(duasPrimeirasLetrasSobrenomeMae.substring(1));
         sobrenomeAjustado.append(tresPrimeirasLetrasCidadeNatal.toLowerCase());
-        
+
         System.out.printf("Seu nome Star Wars é -> %s.\n", nomeAjustado + " " + sobrenomeAjustado);
 
     }

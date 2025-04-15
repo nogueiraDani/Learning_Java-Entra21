@@ -1,3 +1,5 @@
+package metodos.aula_15_04_25;
+
 public class Ex06 {
 
     /*
@@ -32,7 +34,7 @@ public class Ex06 {
                 System.out.printf("O número %d está mais próximo de %d.\n", j, base);
             } else {
                 System.out.printf("O número %d está mais próximo de %d.\n", k, base);
-            } 
+            }
 
         }
 

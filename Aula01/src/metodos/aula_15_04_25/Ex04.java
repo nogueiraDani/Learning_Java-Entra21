@@ -1,3 +1,5 @@
+package metodos.aula_15_04_25;
+
 import java.util.Arrays;
 
 public class Ex04 {
@@ -14,7 +16,7 @@ public class Ex04 {
     public static void descobrirMaiorElemento(int vetor[]) {
         /*
          * a) O maior elemento de um vetor
-        
+         * 
          */
 
         int maiorValor = Integer.MIN_VALUE;
@@ -28,7 +30,7 @@ public class Ex04 {
         System.out.printf("O maior valor do vetor %s é: %d.\n", Arrays.toString(vetor), maiorValor);
 
     }
-    
+
     private static void descobrirMenorElemento(int[] vetor) {
         /*
          * b) O menor elemento de um vetor
@@ -45,7 +47,7 @@ public class Ex04 {
         System.out.printf("O menor valor do vetor %s é: %d.\n", Arrays.toString(vetor), menorValor);
 
     }
-    
+
     public static void descobrirMediaDosElementos(int vetor[]) {
         /*
          * c) A média dos valores
@@ -58,10 +60,9 @@ public class Ex04 {
         }
 
         double media = soma / vetor.length;
-    
+
         System.out.printf("A média dos valores dos elementos do vetor é %.1f.\n", media);
     }
-
 
     public static void main(String[] args) {
 
@@ -74,8 +75,5 @@ public class Ex04 {
         descobrirMediaDosElementos(vetor);
 
     }
-
-
-
 
 }
