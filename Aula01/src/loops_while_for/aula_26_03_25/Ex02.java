@@ -36,6 +36,7 @@ public class Ex02 {
 				valorInicial, valorFinal, somaPares);
 		System.out.printf("A soma dos numeros ímpares entre %d e %d é %d.\n", 
 				valorInicial, valorFinal, somaImpares);
+		scanner.close();
 	}
 
 }

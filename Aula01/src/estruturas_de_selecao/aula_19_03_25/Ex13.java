@@ -57,6 +57,7 @@ public class Ex13 {
 		} else {
 			System.out.println("Idade inválida.");
 		}
+		scanner.close();
 
 	}
 

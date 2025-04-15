@@ -51,6 +51,7 @@ public class Ex15 {
         } else {
             System.out.print("obesidade grau III (morbida).");
         }
+        scanner.close();
  
     }
  

@@ -1,7 +1,5 @@
 package matrizes.aula_02_04_25;
 
-import java.util.Arrays;
-
 public class Matriz {
 
 	public static void main(String[] args) {

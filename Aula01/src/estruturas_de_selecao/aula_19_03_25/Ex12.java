@@ -422,6 +422,7 @@ public class Ex12 {
 			}
 
 		}
+		scanner.close();
 	}
 
 }

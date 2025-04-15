@@ -29,6 +29,8 @@ public class Ex05 {
 		} else {
 			System.out.println("Não é letra.");
 		}
+		
+		scanner.close();
 	}
 
 }

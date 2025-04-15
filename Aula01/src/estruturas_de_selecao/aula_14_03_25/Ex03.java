@@ -25,6 +25,8 @@ public class Ex03 {
 		} else {
 			System.out.println("nome incorreto");
 		}
+
+		scanner.close();
 		
 	}
 

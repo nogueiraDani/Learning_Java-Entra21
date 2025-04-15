@@ -89,6 +89,7 @@ public class Ex17 {
 		{
 			System.out.println("Dia inválido, digite valores entre 1 e 31.");
 		}
+		scanner.close();
 
 	}
 }

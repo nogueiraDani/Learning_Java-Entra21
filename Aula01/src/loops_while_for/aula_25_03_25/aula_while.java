@@ -31,7 +31,7 @@ public class aula_while {
 				valorInicial++;
 			}
 		}
-
+		scanner.close();
 	}
 
 }

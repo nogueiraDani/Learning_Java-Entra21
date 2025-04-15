@@ -39,6 +39,8 @@ public class Ex06 {
 			System.out.println("Idade não possui classificação");
 		}
 
+		scanner.close();
+
 	}
 
 }

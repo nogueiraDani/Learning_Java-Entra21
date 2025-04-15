@@ -33,6 +33,8 @@ public class Ex08 {
 		} else {
 			System.out.println("Irmãos");
 		}
+
+		scanner.close();
 	}
 
 }

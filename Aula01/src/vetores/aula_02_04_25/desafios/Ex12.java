@@ -55,7 +55,7 @@ public class Ex12 {
 							------ Digite o valor ------
 							""");
 					int valor = scanner.nextInt();
-					if(elementos[elementos.length - 1] == 0) {
+					if (elementos[elementos.length - 1] == 0) {
 						elementos[elementos.length - 1] = valor;
 						System.out.printf("%d incluido na ultima posição do vetor.\n", valor);
 					} else {
@@ -70,65 +70,66 @@ public class Ex12 {
 
 				if (opcaoMenu == 2) {
 					System.out.print("""
-								------ Digite o valor ------
-								""");
+							------ Digite o valor ------
+							""");
 					int valor = scanner.nextInt();
 					for (int i = 0; i < elementos.length; i++) {
-						if(elementos[i] == valor) {
+						if (elementos[i] == valor) {
 							System.out.printf("O valor %d está no vetor.\n", valor);
 							break;
 						}
 					}
 				}
 
-				if (opcaoMenu == 3) {				
+				if (opcaoMenu == 3) {
 					System.out.print("""
 							------ Digite o valor a ser alterado ------
 							""");
 					int valorAntigo = scanner.nextInt();
-					
+
 					System.out.print("""
 							----------- Digite o novo valor ------------
 							""");
 					int valorNovo = scanner.nextInt();
 					boolean valorFoiEncontrado = false;
-					
+
 					for (int i = 0; i < elementos.length; i++) {
-						if(elementos[i] == valorAntigo) {
+						if (elementos[i] == valorAntigo) {
 							elementos[i] = valorNovo;
 							valorFoiEncontrado = true;
-							System.out.printf("O valor %d que estava na posicao %d  foi alterado para %d.\n", valorAntigo, i, valorNovo);
+							System.out.printf("O valor %d que estava na posicao %d  foi alterado para %d.\n",
+									valorAntigo, i, valorNovo);
 							break;
 						}
 					}
-					
-					if(!valorFoiEncontrado) {
+
+					if (!valorFoiEncontrado) {
 						System.out.printf("O valor %d não foi encontrado.\n", valorAntigo);
 					}
 				}
 
-				if (opcaoMenu == 4) {				
+				if (opcaoMenu == 4) {
 					System.out.print("""
 							------ Digite o valor a ser excluido ------
 							""");
 					int valor = scanner.nextInt();
-					
+
 					for (int i = 0; i < elementos.length; i++) {
-						
-						if(elementos[i] == valor && i!= elementos.length -1) {
+
+						if (elementos[i] == valor && i != elementos.length - 1) {
 							elementos[i] = elementos[i + 1];
-							
-							for(int j = i; j < elementos.length; j++) {
-								if(j != elementos.length - 1) {
-									elementos[j] = elementos[j + 1];									
+
+							for (int j = i; j < elementos.length; j++) {
+								if (j != elementos.length - 1) {
+									elementos[j] = elementos[j + 1];
 								}
-								if(j == elementos.length -1) {
+								if (j == elementos.length - 1) {
 									elementos[j] = 0;
 								}
 							}
 						}
-						
-						if(elementos[i] == valor && i== elementos.length -1) {
+
+						if (elementos[i] == valor && i == elementos.length - 1) {
 							elementos[i] = 0;
 						}
 					}
@@ -145,6 +146,7 @@ public class Ex12 {
 				System.out.println("Opçao inválida, escolha entre uma das opções abaixo:");
 			}
 		}
+		scanner.close();
 
 	}
 

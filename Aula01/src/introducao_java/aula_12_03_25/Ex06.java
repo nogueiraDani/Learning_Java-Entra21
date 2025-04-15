@@ -23,33 +23,16 @@ public class Ex06 {
 			public Vendedor() {
 			}
 
-			public String getNome() {
-				return nome;
-			}
-
 			public void setNome(String nome) {
 				this.nome = nome;
 			}
-
-			public double getSalarioFixo() {
-				return salarioFixo;
-			}
-			 
 
 			public void setSalarioFixo(double salarioFixo) {
 				this.salarioFixo = salarioFixo;
 			}
 
-			public double getTotalVendasMes() {
-				return totalVendasMes;
-			}
-
 			public void setTotalVendasMes(double totalVendasMes) {
 				this.totalVendasMes = totalVendasMes;
-			}
-
-			public double getComissao() {
-				return comissao;
 			}
 
 			@Override
@@ -65,18 +48,18 @@ public class Ex06 {
 
 		Scanner scanner = new Scanner(System.in);
 		Vendedor vendedor = new Vendedor();
-		
+
 		System.out.println("Digite o nome do vendedor:");
 		vendedor.setNome(scanner.next());
-		
+
 		System.out.println("Digite o salario fixo:");
 		vendedor.setSalarioFixo(scanner.nextDouble());
-		
+
 		System.out.println("Digite o total de vendas:");
 		vendedor.setTotalVendasMes(scanner.nextDouble());
-		
+
 		System.out.println(vendedor.toString());
-		
+
 		scanner.close();
 	}
 

@@ -54,7 +54,7 @@ public class Ex10 {
 		} else {
 			System.out.println("Não há alunos com mais que 20 anos cadastrados.");
 		}
-
+		scanner.close();
 	}
 
 }

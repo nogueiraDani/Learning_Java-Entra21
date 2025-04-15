@@ -30,6 +30,7 @@ public class Ex11 {
 		} else {
 			System.out.println("Valor inválido, fatorial só é permitido para numeros inteiros maiores que 0.");
 		}
+		scanner.close();
 
 	}
 

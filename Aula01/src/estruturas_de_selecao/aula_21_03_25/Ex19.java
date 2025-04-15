@@ -42,5 +42,6 @@ public class Ex19 {
  
         System.out.printf("o salario total é R$ %.2f", salario);
  
+        scanner.close();
     }
 }

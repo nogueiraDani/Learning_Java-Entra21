@@ -47,6 +47,8 @@ public class Ex10 {
 		} else {
 			System.err.println("Operação inválida.");
 		}
+
+		scanner.close();
 	}
 
 }

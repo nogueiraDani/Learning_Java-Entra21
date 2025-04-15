@@ -44,6 +44,8 @@ public class Ex11 {
 		} else {
 			System.out.println("Operação inválida");
 		}
+
+		scanner.close();
 				
 	}
 

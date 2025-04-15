@@ -35,6 +35,7 @@ public class Ex18 {
         } else {
             System.out.println("reajuste não definido para mais de 48 meses.");
         }
+        scanner.close();
  
     }
 }

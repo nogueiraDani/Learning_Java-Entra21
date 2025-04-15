@@ -64,6 +64,8 @@ public class Ex16 {
         } else {
             System.out.println("Não foi dessa vez, você está reprovado.");
         }
+        
+        scanner.close();
  
     }
  

@@ -2,7 +2,6 @@ package introducao_java.aula_12_03_25;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
-import java.util.function.Function;
 
 public class Ex07 {
 

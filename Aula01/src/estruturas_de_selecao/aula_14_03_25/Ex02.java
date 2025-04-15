@@ -1,7 +1,5 @@
 package estruturas_de_selecao.aula_14_03_25;
 
-import java.util.Scanner;
-
 public class Ex02 {
 
 	public static void main(String[] args) {

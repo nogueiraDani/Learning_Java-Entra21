@@ -29,5 +29,6 @@ public class aula_for {
 				System.out.println(i);
 			}
 		}
+		scanner.close();
 	}
 }

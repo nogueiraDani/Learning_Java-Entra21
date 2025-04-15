@@ -36,7 +36,7 @@ public class Ex06 {
 		
 		System.out.printf("A média entre as %d pessoas é: %.2f m", 
 				quantidadeDePessoas, mediaAlturas);
-		
+		scanner.close();
 	}
 
 }

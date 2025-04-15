@@ -49,7 +49,7 @@ public class Ex08 {
 				System.out.println("Fim");
 			}
 		}
-
+		scanner.close();
 	}
 
 }

@@ -32,6 +32,8 @@ public class Ex04 {
 			System.out.println("Entrada Incorreta");
 		}
 
+		scanner.close();
+
 	}
 
 }

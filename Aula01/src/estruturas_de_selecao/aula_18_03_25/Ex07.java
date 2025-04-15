@@ -33,8 +33,10 @@ public class Ex07 {
 		} else if (y == 0 && x > 0) {
 			System.out.println("Está sobre o eixo Y");
 		} else {
-			System.out.println("Centro");			
+			System.out.println("Centro");
 		}
+		
+		scanner.close();
 
 	}
 

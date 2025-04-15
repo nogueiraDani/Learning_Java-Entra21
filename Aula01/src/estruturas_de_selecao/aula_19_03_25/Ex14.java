@@ -14,7 +14,7 @@ public class Ex14 {
 
 		Scanner scanner = new Scanner(System.in);
 
-		int idadeMarquinhos, idadeZezinho, idadeLuluzinha, idadeMaisVelho, idadeMeio, idadeCacula;
+		int idadeMarquinhos, idadeZezinho, idadeLuluzinha, idadeMaisVelho, idadeCacula;
 
 		System.out.println("Digite a idade do Marquinhos:");
 		idadeMarquinhos = scanner.nextInt();
@@ -66,13 +66,16 @@ public class Ex14 {
 
 			} else {
 				System.err.println("Existem idades iguais.");
+				scanner.close();
 				return;
 			}
 
 		} else {
 			System.err.println("Alguma idade é inválida.");
+			scanner.close();
 			return;
 		}
+		scanner.close();
 
 	}
 

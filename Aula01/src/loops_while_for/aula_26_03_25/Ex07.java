@@ -74,6 +74,6 @@ public class Ex07 {
 		} else {
 			System.out.println("Nenhum atleta cadastrado.");
 		}
-
+		scanner.close();
 	}
 }

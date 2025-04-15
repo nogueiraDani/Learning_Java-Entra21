@@ -55,6 +55,8 @@ public class Ex09 {
 		} else if (contador == 3) {
 			System.out.println("NOOOOOVEEEEEE!");
 		}
+
+		scanner.close();
 	}
 
 }
