@@ -1,5 +1,7 @@
 package metodos.aula_15_04_25;
 
+import java.util.Scanner;
+
 public class Ex06 {
 
     /*
@@ -10,41 +12,56 @@ public class Ex06 {
      * 
      */
 
-    private static void descobrirOMaisProximo(int base, int j, int k) {
+    // refatorado com Clean Code
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        int valores[] = obterValores(scanner);
+        descobrirOMaisProximo(valores);
+        
+    }
+
+    public static void descobrirOMaisProximo(int valores[]) {
+
+        int base = valores[0];
+        int valor1 = valores[1];
+        int valor2 = valores[2];
 
         int diferenca1 = 0;
         int diferenca2 = 0;
 
-        if (j == k) {
+        if (valor1 == valor2) {
             System.out.println("As diferenças são iguais.");
         } else {
-            if (j > base) {
-                diferenca1 = base - j;
-            } else {
-                diferenca1 = j - base;
-            }
 
-            if (k > base) {
-                diferenca2 = base - k;
-            } else {
-                diferenca1 = k - base;
-            }
+            // Math.abs -> busca o modulo do numero (-5 = 5, 5 = 5)
+            diferenca1 = Math.abs(base - valor1);
+            diferenca2 = Math.abs(base - valor2);
 
-            if (diferenca1 > diferenca2) {
-                System.out.printf("O número %d está mais próximo de %d.\n", j, base);
+            if (diferenca1 < diferenca2) {
+                System.out.printf("O número %d está mais próximo de %d.\n", valor1, base);
             } else {
-                System.out.printf("O número %d está mais próximo de %d.\n", k, base);
+                System.out.printf("O número %d está mais próximo de %d.\n", valor2, base);
             }
 
         }
 
     }
 
-    public static void main(String[] args) {
+    public static int[] obterValores(Scanner scanner) {
 
-        descobrirOMaisProximo(2, 3, 3);
-        descobrirOMaisProximo(2, 4, 9);
-        descobrirOMaisProximo(2, 9, 4);
+        int QUANTIDADE_VALORES = 3;
+
+        int valores[] = new int[QUANTIDADE_VALORES];
+
+        for (int i = 0; i < valores.length; i++) {
+            System.out.println("Digite um valor:");
+            valores[i] = scanner.nextInt();
+        }
+
+        return valores;
 
     }
 

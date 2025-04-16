@@ -23,8 +23,47 @@ public class Ex07 {
      * .charAt() das Strings
      */
 
-    private static void generateStarWarsName(String string, String string2, String string3) {
+    // refatorado com Clean Code
 
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String nome = obterNome(scanner);
+        String nomeMae = obterNomeMae(scanner);
+        String cidade = obterCidadenatal(scanner);
+
+        generateStarWarsName(nome, nomeMae, cidade);
+
+        scanner.close();
+    }
+
+    public static String obterCidadenatal(Scanner scanner) {
+        System.out.println("Digite a cidade onde você nasceu");
+        return scanner.nextLine();
+    }
+
+    public static String obterNomeMae(Scanner scanner) {
+        System.out.println("Digite o nome completo da sua mãe");
+        return scanner.nextLine();
+    }
+
+    public static String obterNome(Scanner scanner) {
+        System.out.println("Digite o seu nome completo");
+        return scanner.nextLine();
+    }
+
+    public static void generateStarWarsName(String string, String string2, String string3) {
+
+        String nomeStarWars = gerarNomeStarWars(string);
+        String sobrenomeStarWars = gerarSobrenomeStarWars(string2, string3);
+
+        System.out.printf("Seu nome Star Wars é -> %s.\n", nomeStarWars + " " + sobrenomeStarWars);
+
+    }
+
+    public static String gerarNomeStarWars(String string) {
+        
         String tresPrimeirasLetrasSobrenome = string.substring(string.length() - 3);
         String duasPrimeirasLetrasNome = string.substring(0, 2);
 
@@ -34,6 +73,11 @@ public class Ex07 {
         nomeAjustado.append(tresPrimeirasLetrasSobrenome.substring(1));
         nomeAjustado.append(duasPrimeirasLetrasNome.toLowerCase());
 
+        return nomeAjustado.toString();
+        
+    }
+
+    public static String gerarSobrenomeStarWars(String string2, String string3) {
         String listaSobrenomes[] = string2.split(" ");
         String duasPrimeirasLetrasSobrenomeMae = listaSobrenomes[listaSobrenomes.length - 1].substring(0, 2);
         String tresPrimeirasLetrasCidadeNatal = string3.substring(0, 3);
@@ -44,26 +88,6 @@ public class Ex07 {
         sobrenomeAjustado.append(duasPrimeirasLetrasSobrenomeMae.substring(1));
         sobrenomeAjustado.append(tresPrimeirasLetrasCidadeNatal.toLowerCase());
 
-        System.out.printf("Seu nome Star Wars é -> %s.\n", nomeAjustado + " " + sobrenomeAjustado);
-
+        return sobrenomeAjustado.toString();
     }
-
-    public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Digite o seu nome completo");
-        String nome = scanner.nextLine();
-
-        System.out.println("Digite o nome completo da sua mãe");
-        String nomeMae = scanner.nextLine();
-
-        System.out.println("Digite a cidade onde você nasceu");
-        String cidade = scanner.nextLine();
-
-        generateStarWarsName(nome, nomeMae, cidade);
-
-        scanner.close();
-    }
-
 }
