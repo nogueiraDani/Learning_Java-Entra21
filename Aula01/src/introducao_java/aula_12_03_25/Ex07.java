@@ -16,7 +16,7 @@ public class Ex07 {
 		Scanner scanner = new Scanner(System.in);
 		DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
-		double valorEmDolares, valorEmReais, cotacaoDolar;
+		double valorEmDolares, cotacaoDolar;
 
 		System.out.println("Digite o valor em dolares:");
 		valorEmDolares = scanner.nextDouble();
