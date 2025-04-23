@@ -4,8 +4,8 @@ public class Ex17 {
 
     /**
      * Faça um código que recebe uma palavra do usuário, se essa palavra tem tamanho
-     * par, retorne o primeiro caractere dessa palavra.
-     * Caso ela tenha tamanho ímpar, retorne o segundo caractere dessa palavra.
+     * impar, retorne o primeiro caractere dessa palavra.
+     * Caso ela tenha tamanho par, retorne o segundo caractere dessa palavra.
      */
 
     public static void main(String[] args) {
@@ -26,9 +26,9 @@ public class Ex17 {
 
     private static char gerarCodigo(String palavra) {
         if (palavra.length() % 2 == 0) {
-            return palavra.charAt(0);
-        } else {
             return palavra.charAt(1);
+        } else {
+            return palavra.charAt(0);
         }
     }
 
