@@ -1,18 +1,19 @@
-## Getting Started
+# Exercicio 02
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Crie uma classe denominada Mercado.
 
-## Folder Structure
+Essa classe terá 5 atributos, as informações que deverão ser guardadas são:
 
-The workspace contains two folders by default, where:
+    • Nome do mercado
+    • Número de maçãs vendidas por ano.
+    • Preço de venda das maçãs.
+    • Número de laranjas vendidas por ano.
+    • Preço de venda das laranjas.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Crie 3 objetos da classe Mercado chamados:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+    unidadeDeBlumenau
+    unidadeDeJoinville
+    unidadeDeFlorianopolis
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Atribua valores a esses objetos

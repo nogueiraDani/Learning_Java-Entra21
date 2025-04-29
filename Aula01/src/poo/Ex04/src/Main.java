@@ -1,11 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        
-        /*
-         * Crie uma classe chamada Circulo que tenha o atributo raio
-         * Calcule a área de 5 objetos diferentes de Circulo
-         * Para obter o valor de PI, use a função Math.PI do Java
-         */
 
         double raios[] = { 5.60, 8.90, 10.15, 2.0, 1.36 };
 

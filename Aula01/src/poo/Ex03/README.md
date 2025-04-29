@@ -1,18 +1,24 @@
-## Getting Started
+# Exercicio 03
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+A partir das representações abaixo dos objetos de uma classe Produto, escreva o código
+necessário para suportar tais objetos.
 
-## Folder Structure
+Ou seja, o código necessário para criar a classe e instanciar os objetos de modo que fiquem
+com o estado apresentado.
 
-The workspace contains two folders by default, where:
+    produto1: Produto
+    nome = “Caderno”
+    descricao = “Caderno em espiral tamanho médio”
+    precoUnitario = 4.50
+    desconto = 15
+    produto2: Produto
+    nome = “Caneta ESF”
+    descricao = “Caneta esferográfica 5mm”
+    precoUnitario = 1.20
+    desconto = 2
+    produto3: Produto
+    nome = “Esquadro”
+    descricao = “Esquadro de acrílico 20 cm”
+    precoUnitario = 2.35
+    desconto = 10
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
