@@ -1,18 +1,7 @@
-## Getting Started
+# Exercicio 01
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Em uma classe denominada Pessoa, deseja-se manter o nome, sexo, data de nascimento e estado civil de uma pessoa.
 
-## Folder Structure
+O sexo deve ser definido como um caractere.
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+A data deve ser definida como String.
