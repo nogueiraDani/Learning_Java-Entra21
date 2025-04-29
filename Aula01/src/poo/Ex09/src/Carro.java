@@ -15,8 +15,10 @@ public class Carro {
 
     public void acelerar(int i) throws Exception {
         if (i >= 0 && i < 20) {
-            setVelocidade(velocidade + i);
+            int novaVelocidade = getVelocidade() + i; // TODO: parei aqui nao ta atualizando o velocidadae certa
+            setVelocidade(novaVelocidade);
         } else {
+            setVelocidade(0);
             throw new Exception("Valor inválido para acelerar.");
         }
     }
