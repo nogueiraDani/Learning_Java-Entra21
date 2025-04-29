@@ -1,74 +1,121 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Franquia {
 
-    Mercado mercados[];
-    Double receitasComFrutas[][] = gerarReceitasComFrutas();
-    Double receitasTotais[] = gerarReceitasTotais();
+    List<Mercado> mercados = new ArrayList<>();
 
-    // receitas com macas e laranjas
-    public Double[][] gerarReceitasComFrutas() {
+    public int descobrirIndiceMercadoComMaiorVendaDeMacas() {
+        double maiorVenda = Double.MIN_VALUE;
+        int indiceMaiorVenda = -1;
 
-        Double receitasComFrutas[][] = new Double[mercados.length][2];
+        for (int i = 0; i < mercados.size(); i++) {
+            double vendaMercado = mercados.get(i).getReceitaComMacas();
+            if (vendaMercado > maiorVenda) {
+                maiorVenda = vendaMercado;
+                indiceMaiorVenda = i;
 
-        for (int i = 0; i < receitasComFrutas.length; i++) {
-            for (int j = 0; j < receitasComFrutas[i].length; j++) {
-                if (j == 0) {
-                    receitasComFrutas[i][j] = mercados[i].getReceitaComMacas();
-                } else {
-                    receitasComFrutas[i][j] = mercados[i].getReceitaComLaranjas();
-                }
             }
         }
 
-        return receitasComFrutas;
+        return indiceMaiorVenda;
     }
 
-    public Double[] gerarReceitasTotais() {
+    public int descobrirIndiceMercadoComMaiorVendaDeLaranjas() {
+        double maiorVenda = Double.MIN_VALUE;
+        int indiceMaiorVenda = -1;
 
-        Double receitasTotais[] = new Double[mercados.length];
+        for (int i = 0; i < mercados.size(); i++) {
+            double vendaMercado = mercados.get(i).getReceitaComLaranjas();
+            if (vendaMercado > maiorVenda) {
+                maiorVenda = vendaMercado;
+                indiceMaiorVenda = i;
 
-        for (int i = 0; i < receitasTotais.length; i++) {
-            receitasTotais[i] = mercados[i].getReceitaTotal();
+            }
         }
 
-        return receitasTotais;
+        return indiceMaiorVenda;
     }
 
-    public String mostrarQuemTeveMaiorReceitaComMacas() {
+    public int descobrirIndiceMercadoComMaiorReceita() {
         double maiorReceita = Double.MIN_VALUE;
-        int indiceDaMaiorReceita = -1;
+        int indiceMaiorReceita = -1;
 
-        for (int i = 0; i < mercados.length; i++) {
-            for (int j = 0; j < receitasComFrutas.length; j++) {
-                if (j == 0 && receitasComFrutas[i][j] > maiorReceita) {
-                    maiorReceita = receitasComFrutas[i][j];
-                    indiceDaMaiorReceita = i;
-                }
+        for (int i = 0; i < mercados.size(); i++) {
+            double receitaMercado = mercados.get(i).getReceitaTotal();
+            if (receitaMercado > maiorReceita) {
+                maiorReceita = receitaMercado;
+                indiceMaiorReceita = i;
+
             }
         }
 
-        return String.format("A unidade de %s foi a que obteve maior receita com maças: R$ %.2f",
-                mercados[indiceDaMaiorReceita].nome,
-                receitasComFrutas[indiceDaMaiorReceita][0]);
+        return indiceMaiorReceita;
 
     }
 
-    public String mostrarQuemTeveMaiorReceitaComLaranjas() {
+    public int descobrirIndiceMercadoComMenorReceita() {
         double menorReceita = Double.MAX_VALUE;
-        int indiceDaMaiorReceita = -1;
+        int indiceMenorReceita = -1;
 
-        for (int i = 0; i < mercados.length; i++) {
-            for (int j = 0; j < receitasComFrutas.length; j++) {
-                if (j == 0 && receitasComFrutas[i][j] < menorReceita) {
-                    menorReceita = receitasComFrutas[i][j];
-                    indiceDaMaiorReceita = i;
-                }
+        for (int i = 0; i < mercados.size(); i++) {
+            double receitaMercado = mercados.get(i).getReceitaTotal();
+            if (receitaMercado < menorReceita) {
+                menorReceita = receitaMercado;
+                indiceMenorReceita = i;
+
             }
         }
 
-        return String.format("A unidade de %s foi a que obteve menor receita com maças: R$ %.2f",
-                mercados[indiceDaMaiorReceita].nome,
-                receitasComFrutas[indiceDaMaiorReceita][0]);
+        return indiceMenorReceita;
+
     }
 
-    //TODO: parei aqui, tá com erro pq o mercados[] mostra vazio.
+    public int descobrirIndiceMercadoComReceitaMedia() {
+        int maiorReceita = descobrirIndiceMercadoComMaiorReceita();
+        int menorReceita = descobrirIndiceMercadoComMenorReceita();
+        int indice = -1;
+
+        for (int i = 0; i < mercados.size(); i++) {
+            if (i != maiorReceita && i != menorReceita) {
+                indice = i;
+            }
+        }
+        return indice;
+    }
+
+    public String descobrirReceitaTotalMaiorComMacasOuLaranjas() {
+        double receitasTotaisDaFranquiaComMaca = descobrirReceitaTotalFranquiaComMacas();
+        double receitasTotaisDaFranquiaComLaranja = descobrirReceitaTotalFranquiaComLaranjas();
+
+        if (receitasTotaisDaFranquiaComMaca > receitasTotaisDaFranquiaComLaranja) {
+            return "Maças";
+        } else if (receitasTotaisDaFranquiaComMaca < receitasTotaisDaFranquiaComLaranja) {
+            return "Laranja";
+        } else {
+            return "Iguais";
+        }
+        
+    }
+
+    private double descobrirReceitaTotalFranquiaComLaranjas() {
+        double receita = 0;
+
+        for (int i = 0; i < mercados.size(); i++) {
+            receita += mercados.get(i).getReceitaComLaranjas();
+        }
+
+        return receita;
+    }
+
+    private double descobrirReceitaTotalFranquiaComMacas() {
+        double receita = 0;
+
+        for (int i = 0; i < mercados.size(); i++) {
+            receita += mercados.get(i).getReceitaComMacas();
+        }
+
+        return receita;
+    }
+
 }
