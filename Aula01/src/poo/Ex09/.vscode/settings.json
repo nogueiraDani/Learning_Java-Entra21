@@ -3,5 +3,10 @@
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#2B3008",
+        "titleBar.activeBackground": "#3C440C",
+        "titleBar.activeForeground": "#F9FBEA"
+    }
 }

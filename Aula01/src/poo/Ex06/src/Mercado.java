@@ -23,9 +23,7 @@ public class Mercado {
 
     public double getReceitaTotal() {
         return getReceitaComMacas() + getReceitaComLaranjas();
-    }
-
-    
+    }    
 
     
 

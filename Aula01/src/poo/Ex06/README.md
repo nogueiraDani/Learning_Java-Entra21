@@ -1,18 +1,14 @@
-## Getting Started
+# Exercicio 06
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Utilizando a classe Mercado.
 
-## Folder Structure
+Atribua valores às variáveis da classe Mercado para cada um dos objetos de Mercado.
 
-The workspace contains two folders by default, where:
+Calcule:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+    a) Quem teve a maior receita vendendo maçãs?
+    b) Quem teve a maior receita vendendo laranjas?
+    c) Qual das lojas teve a maior receita?
+    d) Qual das lojas teve a menor receita?
+    e) Qual das lojas ficou no "meio" em termos de receita?
+    f) Juntando as 3 lojas, a franquia teve uma receita maior vendendo maçãs ou laranjas?
