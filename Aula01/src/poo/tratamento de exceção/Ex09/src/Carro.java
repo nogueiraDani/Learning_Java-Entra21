@@ -10,12 +10,16 @@ public class Carro {
     }
 
     public void setVelocidade(int velocidade) {
-        this.velocidade = velocidade;
+        if (velocidade >= 0) {
+            this.velocidade = velocidade;
+        } else {
+            throw new IllegalArgumentException("Velocidade inválida.");
+        }
     }
 
     public void acelerar(int i) throws Exception {
-        if (i >= 0 && i < 20) {
-            int novaVelocidade = getVelocidade() + i; 
+        if (i < 20) {
+            int novaVelocidade = getVelocidade() + i;
             setVelocidade(novaVelocidade);
         } else {
             setVelocidade(0);
@@ -30,6 +34,5 @@ public class Carro {
             throw new Exception("Valor inválido para reduzir.");
         }
     }
-    
 
 }
