@@ -10,11 +10,10 @@ public class App {
             caderno.adicionarTarefa(new Tarefa("Ex4"));
             caderno.adicionarTarefa(new Tarefa("Ex5"));
             caderno.adicionarTarefa(new Tarefa("Ex6"));
-            caderno.adicionarTarefa(new Tarefa("Ex6"));
             caderno.removerTarefa("Ex2");
-            caderno.removerTarefa("Ex7");
+            caderno.listarTarefas();
         } catch (Exception e) {
-            System.out.println(e.getMessage()); // TODO: nao tá buscando a minha mensagem da Exception
+            System.out.println("Erro: " + e.getMessage()); 
         }
 
     }
