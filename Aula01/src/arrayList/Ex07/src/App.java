@@ -5,28 +5,24 @@ public class App {
     public static void main(String[] args) {
         
         String palavra = "Amor";
-        palavra.toLowerCase();
+        String palavraLower = palavra.toLowerCase();
         
-        StringBuilder palavraInvertida = new StringBuilder();
-
-        ArrayList<Character> palavraInicial = new ArrayList<>();
-
-        for (Character character : palavra.toCharArray()) {
-            palavraInicial.add(character);
+        // Converte a palavra para uma lista de caracteres
+        ArrayList<Character> caracteres = new ArrayList<>();
+        for (char c : palavraLower.toCharArray()) {
+            caracteres.add(c);
         }
-
-        Collections.reverse(palavraInicial);
-
-        for (Character character : palavraInicial) {
-            palavraInvertida.append(character);
-        }
-
-        System.out.println(palavra);
-        System.out.println(palavraInvertida);
-
-        //TODO: -- PAREI AQUI -- falta fazer lowercase
-
         
+        // Cria uma cópia da lista e inverte
+        ArrayList<Character> caracteresInvertidos = new ArrayList<>(caracteres);
+        Collections.reverse(caracteresInvertidos);
+        
+        // Verifica se a lista original é igual à lista invertida
+        if (caracteres.equals(caracteresInvertidos)) {
+            System.out.println("'" + palavra + "' é um palíndromo!");
+        } else {
+            System.out.println("'" + palavra + "' NÃO é um palíndromo.");
+        }
 
     }
 }
