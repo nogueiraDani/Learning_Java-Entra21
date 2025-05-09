@@ -20,12 +20,22 @@ public class Estoque {
         }
     }
 
-    public void removerDoEstoque(Material material, Integer quantidade) {
+    public void removerDoEstoque(Material material, Integer quantidade) throws Exception {
         if (listaEstoque.containsKey(material)) {
-            listaEstoque.put(material, listaEstoque.get(material) - quantidade);
+            Integer quantidadeEmEstoque = listaEstoque.get(material);
+            if (quantidadeEmEstoque >= quantidade) {
+                listaEstoque.replace(material, listaEstoque.get(material) - quantidade);
+            } else {
+                throw new Exception(String.format(
+                        "Não há %d %s no estoque.", quantidade, material.getDescricao()));
+            }
         } else {
-            listaEstoque.put(material, -quantidade);
+            throw new Exception(String.format("Não há %s no estoque.", material.getDescricao()));
         }
-        //TODO: -- PAREI AQUI --
     }
+    
+    public Integer consultarEstoque(Material material) {
+        return listaEstoque.get(material);
+    }
+
 }

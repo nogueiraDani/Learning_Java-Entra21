@@ -1,21 +1,17 @@
 public class Material {
 
-
     private TipoDeMaterial tipo;
     private String descricao;
     private Double preco;
     private Double volume;
     private Double peso;
-    private Integer quantidadeEmEstoque;
 
-    public Material(TipoDeMaterial tipo, String descricao, Double preco, Double volume, Double peso,
-            Integer quantidadeEmEstoque) {
+    public Material(TipoDeMaterial tipo, String descricao, Double preco, Double volume, Double peso) {
         setTipo(tipo);
         setDescricao(descricao);
         setPreco(preco);
         setVolume(volume);
         setPeso(peso);
-        setQuantidadeEmEstoque(quantidadeEmEstoque);
     }
 
     public TipoDeMaterial getTipo() {
@@ -48,12 +44,7 @@ public class Material {
     public void setPeso(Double peso) {
         this.peso = peso;
     }
-    public Integer getQuantidadeEmEstoque() {
-        return quantidadeEmEstoque;
-    }
-    public void setQuantidadeEmEstoque(Integer quantidadeEmEstoque) {
-        this.quantidadeEmEstoque = quantidadeEmEstoque;
-    }
+    
 
     
 
