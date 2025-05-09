@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class App {
     public static void main(String[] args) {
         
@@ -9,10 +11,20 @@ public class App {
         agenda.adicionarContato(new Contato("Dani"));
         agenda.adicionarContato(new Contato("José"));
 
-        agenda.imprimirListaContatos();
-        System.out.println("------");
         agenda.removerContatoDuplicado();
-        agenda.imprimirListaContatos();
+        List<Contato> lista = agenda.getListContatos();
+        List<Contato> listaRepetidos = agenda.getNomesRepetidos();
+
+        for (Contato contato : lista) {
+            System.out.println(contato.getNome());
+        }
+
+        System.out.println("--------");
+
+        for (Contato contato : listaRepetidos) {
+            System.out.println(contato.getNome());
+        }
+        
 
     }
 }

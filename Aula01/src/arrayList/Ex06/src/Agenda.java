@@ -4,37 +4,42 @@ import java.util.List;
 public class Agenda {
 
     private List<Contato> listContatos;
+    private List<Contato> nomesRepetidos;
 
     public Agenda() {
         setListContatos();
+        setListNomesRepetidos();
     }
 
     public void setListContatos() {
         this.listContatos = new ArrayList<>();
     }
+    
+    public void setListNomesRepetidos() {
+        this.nomesRepetidos = new ArrayList<>();
+    }
+
+    public List<Contato> getListContatos() {
+        return listContatos;
+    }
+
+    public List<Contato> getNomesRepetidos() {
+        return nomesRepetidos;
+    }    
 
     public void adicionarContato(Contato contato) {
         listContatos.add(contato);
     }
 
-    public List<Contato> removerContatoDuplicado() {
-        List<Contato> listaSemDuplicados = new ArrayList<>();
-
+    public void removerContatoDuplicado() {
         for (Contato contato : listContatos) {
-            if (!listaSemDuplicados.contains(contato)) {
-                listaSemDuplicados.add(contato);
+            if (nomesRepetidos.isEmpty()) {
+                nomesRepetidos.add(contato);
+            } else {
+                if (nomesRepetidos.contains(contato)) {
+                    listContatos.remove(contato);
+                }
             }
-            //TODO: -- PAREI AQUI -- nao quero q essa funcao retorne algo, ela deve ser void
-        }
-        return listaSemDuplicados;
-    }
-
-    public void imprimirListaContatos() {
-        for (Contato contato : listContatos) {
-            System.out.println(contato);
         }
     }
-
-    
-
 }

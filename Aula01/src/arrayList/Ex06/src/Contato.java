@@ -41,7 +41,7 @@ public class Contato {
 
     @Override
     public String toString() {
-        return "Contato [nome: " + nome + "]";
+        return "Contato [nome: " + nome + "]" ;
     }
 
 }
